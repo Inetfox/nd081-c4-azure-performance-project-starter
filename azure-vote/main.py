@@ -30,6 +30,7 @@ logger = logging.getLogger(__name__)
 handler = AzureLogHandler(connection_string='InstrumentationKey=e4d9f4f4-9ea8-4e28-b08d-09acae8b4623')
 handler.setFormatter(logging.Formatter('%(traceId)s %(spanId)s %(message)s'))
 logger.addHandler(handler)
+logger.addHandler(AzureEventHandler(connection_string='InstrumentationKey=e4d9f4f4-9ea8-4e28-b08d-09acae8b4623'))
 logger.setLevel(logging.INFO)
 
 # Metrics
